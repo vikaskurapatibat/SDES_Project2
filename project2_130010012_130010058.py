@@ -39,6 +39,9 @@ def Ey(x,y,z):
 def Ez(x,y,z):
 	return 0.0
 
+def new():
+	pass
+
 def cyclotron(q,m,x_i,y_i,z_i,vx_i,vy_i,vz_i,Bx,By,Bz,Ex,Ey,Ez,tf,dt):
 	"""The motion of a point charge under a varying electric and magnetic field which are to  be given as functions of x,y,z in three components."""
 	particle = charge_particle(q,m,x_i,y_i,z_i,vx_i,vy_i,vz_i)
