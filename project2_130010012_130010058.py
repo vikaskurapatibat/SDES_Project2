@@ -63,7 +63,7 @@ def cyclotron(q,m,x_i,y_i,z_i,vx_i,vy_i,vz_i,Bx,By,Bz,Ex,Ey,Ez,tf,dt):
 
 	return T,X,Y,Z
 
-def animate(X,Y):
+def animate(X,Y,name):
     fig = plt.figure()
     ax = plt.axes(xlim=(np.amin(X), np.amax(X)), ylim=(np.amin(Y)-0.1*np.amin(Y), np.amax(Y)+0.1*np.amin(Y)))
     line, = ax.plot([], [], lw=2)
@@ -80,5 +80,5 @@ def animate(X,Y):
     
     anim = animation.FuncAnimation(fig, animate, init_func=init,
                                frames=200, interval=20, blit=True)
-    anim.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+    anim.save(name+'.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
     plt.show()
