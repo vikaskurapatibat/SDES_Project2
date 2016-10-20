@@ -1,0 +1,324 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{hyperref}
+\usepackage{MnSymbol,wasysym}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Physics Simulator]{Elementary Physics Visualization App} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Asim Ukaye, Vikas Kurapati} % Your name
+\institute[SDES] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Department of Aerospace Engineering \\ % Your institution for the title page
+\medskip
+\textbf{IIT Bombay} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+
+\section{Abstract} 
+\frametitle{Abstract}
+The aim of the project is to simulate interactively basic elementary physics problems using a GUI to show animations according to the inputs received.
+\end{frame}
+
+\begin{frame}
+\frametitle{List of problems being simulated}
+\section{List of problems being simulated}
+\begin{itemize}
+\item Projectile Motion
+\item Cyclotron Motion
+\item Kinetic Theory of gases
+\item Motion of charged particles
+\item Flow past an airfoil
+\item Waves on a string
+\end{itemize}
+
+These are the problems being considered, more problems might be added as we go on and there might be some deletion or constrained problems to be chosen.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Projectile Motion}
+\begin{itemize}
+\item {Projectile Motion:}
+\end{itemize}
+The user has to provide initial speed of the body, launching angle and the number of time steps (s)he wants the GUI to divide the time to be simulated. \\
+Using these inputs, there will be an animation displayed on the screen showing the path of the point mass from the point of projection to the point where it will fall. 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Cyclotron Motion}
+\begin{itemize}
+\item {Cyclotron Motion:}
+\end{itemize}
+The user has to provide charge,initial position and initial velocity of the point charge along with the magnetic and electric field variations in space and time, time for which (s)he wants to simulate the motion along with the number of timesteps.\\
+Using these inputs, there will be an animation displayed on the screen showing the path of the point charge for the time of simulation in different planes.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Kinetic Theory of gases}
+\begin{itemize}
+\item {Kinetic Theory of gases:}
+\end{itemize}
+The user has to provide temperature and number of particles per volume. \\
+Using these inputs, there will be an animation displayed on the screen showing the path of the particles with time in a unit volume. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Motion of charged particles}
+\begin{itemize}
+\item {Motion of charged particles:}
+\end{itemize}
+The user has to provide number of charged particles, initial position,velocity of all the particles, charges of all the particles, time for which the simulation must be run and number of time steps for it to run. \\
+Using these inputs, there will be an animation displayed on the screen showing the path of the charged particles for the time of simulation. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Flow past an airfoil}
+\begin{itemize}
+\item {Flow past an airfoil:}
+\end{itemize}
+The user has to provide velocity, angle of attack, airfoil from the available data or a new airfoil data file in the format specified ,Reynolds number and the time of simulation. \\
+Using these inputs, there will be an animation displayed on the screen showing the flow over the airfoil. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Waves on a string}
+\begin{itemize}
+\item {Waves on a string:}
+\end{itemize}
+The user has to provide length of the string, Young's modulus, boundary conditions and the time of the simulation. \\
+Using these inputs, there will be an animation displayed on the screen showing how the string oscillates under these conditions.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Project Plan}
+\section{Project Plan}
+The work done will be updated regularly on the public git repository: \url{https://github.com/vikaskurapatibat/SDES_Project2.git}
+\begin{block}{Work Done}
+The functions of projectile motion, cyclotron motion, animation and the test cases for projectile motion are finished until now. 
+\end{block}
+
+\begin{block}{Work to be Done}
+Test cases for cyclotron motion, functions for other problems, their tests and GUI implementation, documentation are left over.
+\end{block}
+
+\begin{block}{Work Plan}
+We will first check the implementation of the two problems finished in the GUI first and then implement other problems by regularly checking using the test cases and then updating the documentation till we finish the project.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+
+% \begin{frame}
+% \frametitle{Multiple Columns}
+% \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+% \column{.45\textwidth} % Left column and width
+% \textbf{Heading}
+% \begin{enumerate}
+% \item Statement
+% \item Explanation
+% \item Example
+% \end{enumerate}
+
+% \column{.5\textwidth} % Right column and width
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+
+% \end{columns}
+% \end{frame}
+
+% %------------------------------------------------
+% \section{Second Section}
+% %------------------------------------------------
+
+% \begin{frame}
+% \frametitle{Table}
+% \begin{table}
+% \begin{tabular}{l l l}
+% \toprule
+% \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+% \midrule
+% Treatment 1 & 0.0003262 & 0.562 \\
+% Treatment 2 & 0.0015681 & 0.910 \\
+% Treatment 3 & 0.0009271 & 0.296 \\
+% \bottomrule
+% \end{tabular}
+% \caption{Table caption}
+% \end{table}
+% \end{frame}
+
+% %------------------------------------------------
+
+% \begin{frame}
+% \frametitle{Theorem}
+% \begin{theorem}[Mass--energy equivalence]
+% $E = mc^2$
+% \end{theorem}
+% \end{frame}
+
+% %------------------------------------------------
+
+% \begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+% \frametitle{Verbatim}
+% \begin{example}[Theorem Slide Code]
+% \begin{verbatim}
+% \begin{frame}
+% \frametitle{Theorem}
+% \begin{theorem}[Mass--energy equivalence]
+% $E = mc^2$
+% \end{theorem}
+% \end{frame}\end{verbatim}
+% \end{example}
+% \end{frame}
+
+% %------------------------------------------------
+
+% \begin{frame}
+% \frametitle{Figure}
+% Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
+% %\begin{figure}
+% %\includegraphics[width=0.8\linewidth]{test}
+% %\end{figure}
+% \end{frame}
+
+% %------------------------------------------------
+
+% \begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+% \frametitle{Citation}
+% An example of the \verb|\cite| command to cite within the presentation:\\~
+
+% This statement requires citation \cite{p1}.
+% \end{frame}
+
+% %------------------------------------------------
+
+% \begin{frame}
+% \frametitle{References}
+% \footnotesize{
+% \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+% \bibitem[Smith, 2012]{p1} John Smith (2012)
+% \newblock Title of the publication
+% \newblock \emph{Journal Name} 12(3), 45 -- 678.
+% \end{thebibliography}
+% }
+% \end{frame}
+
+% %------------------------------------------------
+
+\begin{frame}
+\Huge{\centerline{Thank You! \smiley{}}}
+\end{frame}
+
+% %----------------------------------------------------------------------------------------
+
+\end{document}
