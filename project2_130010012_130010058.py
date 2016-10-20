@@ -1,5 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
+from matplotlib import animation
 
 def projectile(u,theta,n):
 	"""The motion of a point mass under gravity in two dimensions thrown at an angle theta with horizontal and a velocity u"""
@@ -20,7 +21,19 @@ class charge_particle:
 		self.vx = vx
 		self.vy = vy
 		self.vz = vz
-		
+
+
+def test_projectile():
+     t,x,y = projectile(10,np.pi/2.0,10)
+     assert x[0] == 0.
+     assert y[0] == y[-1]
+
+def test_projectile_hyp():
+    pass
+
+def test_cyclotron():
+    pass
+
 def Bx(x,y,z):
 	return 0.0
 
@@ -82,6 +95,11 @@ def animate(X,Y,name):
         return line,
     
     anim = animation.FuncAnimation(fig, animate, init_func=init,
-                               frames=200, interval=20, blit=True)
-    anim.save(name+'.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+                               frames=1000, interval=10, blit=True)
+    anim.save(name+'.mp4', fps=120, extra_args=['-vcodec', 'libx264'])
     plt.show()
+
+if __name__ == '__main__':
+    #t,x,y = projectile(10,np.pi/4.,1000)
+    #animate(x,y,'projectile')
+    test_projectile()
