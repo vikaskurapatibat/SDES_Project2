@@ -1,6 +1,8 @@
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import animation
+from hypothesis import given
+from hypothesis import strategies as st
 
 
 def projectile(u, theta, n=1000, g=9.81):
@@ -33,6 +35,22 @@ def animate(X, Y, name):
                                    frames=1000, interval=10, blit=True)
     anim.save(name+'.mp4', fps=120, extra_args=['-vcodec', 'libx264'])
     plt.show()
+
+
+@given(st.integers(min_value=0, max_value=1000), st.integers(min_value=0, max_value=180),
+       st.integers(min_value=100, max_value=1e5))
+def test_projectile(u, theta, n):
+    t, x, y = projectile(u, theta, n)
+    if u == 0:
+        assert x[-1] == 0
+    if (theta > 0) and (theta < 90.0) and u != 0:
+        assert x[-1] > 0
+        assert abs(y[0] - y[-1]) < 1e-4
+    elif (theta < 180.0) and (theta > 90.0)and u != 0:
+        assert x[-1] < 0
+        assert abs(y[0] - y[-1]) < 1e-4
+
 if __name__ == '__main__':
-    t, x, y = projectile(10.0, 45.0)
-    animate(x, y, 'projectile')
+    # t, x, y = projectile(10.0, 45.0)
+    # animate(x, y, 'projectile')
+    test_projectile()
