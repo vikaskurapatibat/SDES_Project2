@@ -3,10 +3,13 @@ from matplotlib import pyplot as plt
 from matplotlib import animation
 from hypothesis import given
 from hypothesis import strategies as st
+from scipy.spatial.distance import pdist, squareform
+import scipy.integrate as integrate
 
 
-def projectile(u,theta,n):
-	"""The motion of a point mass under gravity in two dimensions thrown at an angle theta with horizontal and a velocity u"""
+def projectile(u, theta, n):
+	"""The motion of a point mass under gravity in two dimensions thrown at an ang\
+	le theta with horizontal and a velocity u"""
 	t_max = 2*u*np.sin(theta)/9.81
 	t = np.linspace(0.,t_max,n)
 	x = u*np.cos(theta)*t
@@ -41,15 +44,16 @@ def test_projectile_dummy():
      assert x[0] == 0.
      assert y[0] == y[-1]
 
-@given(st.floats(min_value=0.1, max_value=100), st.floats(min_value=0.1, max_value=np.pi), st.integers(min_value=1, max_value=200) )
+@given(st.integers(min_value=0), st.integers(min_value=0), st.integers(min_value=1) )
 def test_projectile_hyp(u, theta, n):
     t,x,y = projectile(u, theta, n)
-    assert abs(y[0] - y[-1]) < 1e-6
+    assert y[0] == y[-1]
     if (theta > 0) and (theta<np.pi/2.):
-        print x[-1], theta, n 
-        assert x[-1]>=0
-    elif (theta < np.pi) and (theta>np.pi/2.):
-        assert x[-1]<=0
+        assert x[-1]>0
+        assert y[0] == y[-1]
+    elif (theta < np.pi) and (theta<np.pi/2.):
+        assert x[-1]>0
+        assert y[0] == y[-1]
 
 def test_cyclotron():
     pass
@@ -66,7 +70,7 @@ def Bz(x,y,z):
 def Ex(x,y,z):
 	return 10
 
-def Ey(x,y,z):     
+def Ey(x,y,z):
 	return 0.0
 
 def Ez(x,y,z):
@@ -99,6 +103,7 @@ def cyclotron(q,m,x_i,y_i,z_i,vx_i,vy_i,vz_i,Bx,By,Bz,Ex,Ey,Ez,tf,dt):
 
 	return T,X,Y,Z
 
+
 def animate(X,Y,name):
     fig = plt.figure()
     ax = plt.axes(xlim=(np.amin(X), np.amax(X)), ylim=(np.amin(Y)-0.1*np.amin(Y), np.amax(Y)+0.1*np.amin(Y)))
@@ -113,7 +118,7 @@ def animate(X,Y,name):
         #print x,y
         line.set_data(x, y)
         return line,
-    
+
     anim = animation.FuncAnimation(fig, animate, init_func=init,
                                frames=1000, interval=10, blit=True)
     anim.save(name+'.mp4', fps=120, extra_args=['-vcodec', 'libx264'])
@@ -122,4 +127,4 @@ def animate(X,Y,name):
 if __name__ == '__main__':
     #t,x,y = projectile(10,np.pi/4.,1000)
     #animate(x,y,'projectile')
-    test_projectile_hyp()
+    test_projectile()
