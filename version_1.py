@@ -13,13 +13,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-def projectile( u,theta,n):
-    """The motion of a point mass under gravity in two dimensions thrown at an angle theta with horizontal and a velocity u"""
+
+def projectile(u, theta, n):
+    """The motion of a point mass under gravity in two dimensions thrown at an \
+    angle theta with horizontal and a velocity u"""
     t_max = 2*u*np.sin(theta)/9.81
-    t = np.linspace(0.,t_max,n)
+    t = np.linspace(0., t_max, n)
     x = u*np.cos(theta)*t
     y = u*np.sin(theta)*t - 0.5*9.81*t*t
-    return t,x,y
+    return t, x, y
+
 
 class MainApp(Tk):
 
@@ -34,7 +37,7 @@ class MainApp(Tk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for F in (Home, Projectile, Brownian,Cyclotron, Schrodinger ):
+        for F in (Home, Projectile, Brownian, Cyclotron, Schrodinger):
             page_name = F.__name__
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
@@ -58,14 +61,13 @@ class Home(Frame):
         self.controller = controller
         self.initUI()
 
-
-    def initUI(self):
-##        f = Frame(self, height = 50, width = 100, height = 100)
-##        f.pack()
-        #f.place(x = x, y = y)
-##        frame1 = Frame(self)
-##        frame1.pack(fill=X)
-        '''
+        def initUI(self):
+            #        f = Frame(self, height = 50, width = 100, height = 100)
+            #       f.pack()
+            # f.place(x = x, y = y)
+            #        frame1 = Frame(self)
+            #        frame1.pack(fill=X)
+            '''
         photo = PhotoImage(file="atom1.gif", width = 100, height=100)
         #photo.zoomout(0.7,0.7)
         label1 = Label(self, image=photo)
@@ -74,24 +76,24 @@ class Home(Frame):
         '''
         var = StringVar()
         var.set("Please select one of the below problems to simulate")
-        label2 = Label(self, text="Please select one of the below problems to simulate" )
+        label2 = Label(self, text="Please select one of the below problems to \
+        simulate")
 
         label2.pack()
 
         button1 = Button(self, text="Projectile",
-                           command=lambda: self.controller.show_frame("Projectile"))
+                         command=lambda: self.controller.show_frame("Projectile"))
         button1.pack(padx=5, pady=5)
 
         button2 = Button(self, text="Kinetic Theory of Gases",
-                           command=lambda: self.controller.show_frame("Projectile"))
+                         command=lambda: self.controller.show_frame("Projectile"))
         button2.pack(padx=5, pady=5)
 
-##        frame2 = Frame(self)
-##        frame2.pack(fill=X)
-
+        #        frame2 = Frame(self)
+        #        frame2.pack(fill=X)
 
     def initUI(self):
-        title = Label(self, text="Welcome to Physics Simulator!" ,font=("Comic Sans MS", 25))
+        title = Label(self, text="Welcome to Physics Simulator!", font=("Comic Sans MS", 25))
         title.pack(pady=5)
         photo = PhotoImage(file="atom1.gif",)
         #photo = photo.zoom(2)
@@ -102,38 +104,37 @@ class Home(Frame):
 
         var = StringVar()
         var.set("Please select one of the below problems to simulate")
-        label2 = Label(self, text="Please select one of the below problems to simulate" )
+        label2 = Label(self, text="Please select one of the below problems to simulate")
 
         label2.pack(pady=10)
 
         button1 = Button(self, text="Projectile Motion",
-                           command=lambda: self.controller.show_frame("Projectile"))
+                         command=lambda: self.controller.show_frame("Projectile"))
         button1.pack(padx=5, pady=5)
 
         button2 = Button(self, text="Brownian Motion",
-                           command=lambda: self.controller.show_frame("Brownian"))
+                        command=lambda: self.controller.show_frame("Brownian"))
         button2.pack(padx=5, pady=5)
 
-
         button3 = Button(self, text="Cyclotron Motion",
-                           command=lambda: self.controller.show_frame("Cyclotron"))
+                         command=lambda: self.controller.show_frame("Cyclotron"))
         button3.pack(padx=5, pady=5)
 
         button4 = Button(self, text="Charged Particles",
-                           command=lambda: self.controller.show_frame("Projectile"))
+                         command=lambda: self.controller.show_frame("Projectile"))
         button4.pack(padx=5, pady=5)
 
-##        frame3 = Frame(self)
-##        frame3.pack(fill=BOTH, expand=True)
+        #        frame3 = Frame(self)
+        #        frame3.pack(fill=BOTH, expand=True)
         button5 = Button(self, text="Schrodinger Equation",
-                           command=lambda: self.controller.show_frame("Projectile"))
+                         command=lambda: self.controller.show_frame("Projectile"))
         button5.pack(padx=5, pady=5)
 
 
 class Projectile(Frame):
 
         button5 = Button(self, text="Schrodinger Equation",
-                           command=lambda: self.controller.show_frame("Schrodinger"))
+                         command=lambda: self.controller.show_frame("Schrodinger"))
         button5.pack(padx=5, pady=5)
 
 
@@ -148,22 +149,22 @@ class Projectile(Frame):
     def initUI(self):
 
 
-##        self.parent.title("Review")
-##        self.pack(fill=BOTH, expand=True)
+        #        self.parent.title("Review")
+        #        self.pack(fill=BOTH, expand=True)
 
         frame1 = Frame(self)
-        frame1.pack(side = LEFT)
+        frame1.pack(side=LEFT)
 
         button1 = Button(frame1, text="Projectile",
-                           command=lambda: self.controller.show_frame("Projectile"))
+                         command=lambda: self.controller.show_frame("Projectile"))
         button1.grid(row=0, column=0, padx=5, pady=5)
 
         button2 = Button(frame1, text="Kinetic Theory of Gases",
 
-        frame0 = Frame(self)
-        frame0.pack()
+                         frame0=Frame(self)
+                         frame0.pack()
 
-        title = Label(frame0, text="Projectile Motion" ,font=("Comic Sans MS", 25))
+                         title=Label(frame0, text="Projectile Motion" ,font=("Comic Sans MS", 25))
         title.pack()
 
         frame1 = Frame(self)
