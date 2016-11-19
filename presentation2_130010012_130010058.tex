@@ -1,0 +1,168 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Physics Simulator]{Elementary Physics Visualization App} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Asim Ukaye, Vikas Kurapati} % Your name
+\institute[IITB] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Department of Aerospace Engineering \\ % Your institution for the title page
+\medskip
+Indian Institute of Technology, Bombay % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}
+\section{Abstract}
+\frametitle{Abstract}
+The aim of the project is to simulate interactively basic elementary physics problems using a GUI to show animations according to the inputs received.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\section{List of Problems simulated}
+\frametitle{List of problems simulated}
+After consideration from the previous round of scrutiny, we've decided and simulated the following problems to be shown on the GUI according to the inputs of the user.
+\begin{itemize}
+\item Projectile Motion
+\item Cyclotron motion
+\item Particles in a box under gravity.
+\item Schrodinger's barrier break problem
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Projectile Motion}
+\begin{itemize}
+\item Projectile Motion
+\end{itemize}
+User inputs are initial velocity, angle of projection with the horizontal, acceleration due to gravity which is set to a default value of 9.81, number of time step divisions which is set to a default of 1000.\\
+The output of this will be an animation displayed on the User Interface showing the evolution of path of the particle until it hits the horizontal level.\\
+\end{frame}
+
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Cyclotron Motion}
+\begin{itemize}
+\item Cyclotron Motion
+\end{itemize}
+User inputs are time step length , time of the simulation, charge of the particle set to default of 5, mass set to default of 10, Electric field in the x-y plane set to default of 0 in both directions, Initial magnetic field at the initial point in z-direction set to default of 1, initial position set to default at origin, initial velocity $10^4$ in x-direction and $\nabla B$ in both x and y directions of the z-component of the magnetic field. The constraints are imposed as we are doing the simulation only in two dimensions.\\
+The output will be an animation displayed on the user interface showing the path of the particle for the specified time given.
+\end{frame}
+
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Particles in a Box}
+\begin{itemize}
+\item Particles in a Box
+\end{itemize}
+User inputs are number of particles, each particle's initial position inside the box, each particle's initial velocity. \\
+The output will be an animation displayed on the user interface showing the path of the particles which move under gravity and collide with each other elastically.
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Brief Description}
+\subsection{Schrodinger's Barrier}
+\begin{itemize}
+\item Schrodinger's Barrier
+\end{itemize}
+Here, there is not much of a user input but the inputs that can be varied by the user are the barrier height, input wave function. \\
+The output is the animation showing the variation in position-space wave function and momentum-space wave function.
+\end{frame}
+\end{document}
