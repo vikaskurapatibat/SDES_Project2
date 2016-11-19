@@ -43,91 +43,92 @@ class MainApp(Tk):
 
 
 class Home(Frame):
-  
+
     def __init__(self, parent, controller):
-        Frame.__init__(self, parent)   
-         
+        Frame.__init__(self, parent)
+
         self.parent = parent
         self.controller = controller
         self.initUI()
 
-        
+
     def initUI(self):
 ##        f = Frame(self, height = 50, width = 100, height = 100)
-##        f.pack() 
+##        f.pack()
         #f.place(x = x, y = y)
 ##        frame1 = Frame(self)
 ##        frame1.pack(fill=X)
+        '''
         photo = PhotoImage(file="atom1.gif", width = 100, height=100)
         #photo.zoomout(0.7,0.7)
         label1 = Label(self, image=photo)
         label1.photo = photo
         label1.pack(pady=5)
-        
+        '''
         var = StringVar()
         var.set("Please select one of the below problems to simulate")
         label2 = Label(self, text="Please select one of the below problems to simulate" )
-  
+
         label2.pack()
- 
+
         button1 = Button(self, text="Projectile",
                            command=lambda: self.controller.show_frame("Projectile"))
-        button1.pack(padx=5, pady=5)          
-       
+        button1.pack(padx=5, pady=5)
+
         button2 = Button(self, text="Kinetic Theory of Gases",
                            command=lambda: self.controller.show_frame("Projectile"))
-        button2.pack(padx=5, pady=5) 
-        
+        button2.pack(padx=5, pady=5)
+
 ##        frame2 = Frame(self)
 ##        frame2.pack(fill=X)
-        
+
         button3 = Button(self, text="Cyclotron Motion",
                            command=lambda: self.controller.show_frame("Projectile"))
         button3.pack(padx=5, pady=5)
 
         button4 = Button(self, text="Charged Particles",
                            command=lambda: self.controller.show_frame("Projectile"))
-        button4.pack(padx=5, pady=5) 
-        
+        button4.pack(padx=5, pady=5)
+
 ##        frame3 = Frame(self)
 ##        frame3.pack(fill=BOTH, expand=True)
         button5 = Button(self, text="Schrodinger Equation",
                            command=lambda: self.controller.show_frame("Projectile"))
-        button5.pack(padx=5, pady=5)        
-        
-              
+        button5.pack(padx=5, pady=5)
+
+
 class Projectile(Frame):
-  
+
     def __init__(self, parent, controller):
-        Frame.__init__(self, parent)   
+        Frame.__init__(self, parent)
         self.parent = parent
         self.controller = controller
         self.initUI()
-        
+
     def initUI(self):
-      
+
 ##        self.parent.title("Review")
 ##        self.pack(fill=BOTH, expand=True)
-        
+
         frame1 = Frame(self)
         frame1.pack(side = LEFT)
-        
+
         button1 = Button(frame1, text="Projectile",
                            command=lambda: self.controller.show_frame("Projectile"))
-        button1.grid(row=0, column=0, padx=5, pady=5)          
-       
+        button1.grid(row=0, column=0, padx=5, pady=5)
+
         button2 = Button(frame1, text="Kinetic Theory of Gases",
                            command=lambda: self.controller.show_frame("Projectile"))
-        button2.grid(row=1, column=0, padx=5, pady=5)  
-      
+        button2.grid(row=1, column=0, padx=5, pady=5)
+
         button3 = Button(frame1, text="Cyclotron Motion",
                            command=lambda: self.controller.show_frame("Projectile"))
         button3.grid(row=2, column=0, padx=5, pady=5)
 
         button4 = Button(frame1, text="Charged Particles",
                            command=lambda: self.controller.show_frame("Projectile"))
-        button4.grid(row=3, column=0,padx=5, pady=5) 
-        
+        button4.grid(row=3, column=0,padx=5, pady=5)
+
 ##        frame3 = Frame(self)
 ##        frame3.pack(fill=BOTH, expand=True)
         button5 = Button(frame1, text="Schrodinger Equation",
@@ -148,20 +149,20 @@ class Projectile(Frame):
         toolbar = NavigationToolbar2TkAgg(canvas, frame2)
         toolbar.update()
         canvas._tkcanvas.pack(side=TOP, expand=True)
-        
+
         frame3 = Frame(self)
         frame3.pack(side = LEFT)
 
         label1 = Label(frame3, text="Parameters:")
         label1.grid(row=0, column=0, sticky= W)
-              
+
 
 def main():
-  
+
     app = MainApp()
     app.mainloop()
-##    root.mainloop()  
+##    root.mainloop()
 
 
 if __name__ == '__main__':
-    main()  
+    main()
